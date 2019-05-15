@@ -19,6 +19,22 @@
 
   {% for page in results %}
     <h2>{{page.axe_report.url}}</h2>
+    <p>Violations: {{ page.violations }}</p>
+
+    <ul>
+      {% for violation in page.axe_report.violations %}
+          <li>
+            <h2>{{violation.help}} <span>({{violation.impact}})</span></h2>
+            <p>{{violation.description}} <a href="{{violation.helpUrl}}" target="_blank">More Info</a></p>
+
+            {% for node in violation.nodes %}
+              <p>{{node.failureSummary}}</p>
+              <pre>{{node.html|e}}</pre>
+              <pre>Location: {{node.target}}</pre>
+            {% endfor %}
+          </li>
+      {% endfor %}
+    </ul>
   {% endfor %}
 </body>
 </html>
