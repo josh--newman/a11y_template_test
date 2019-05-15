@@ -7,7 +7,18 @@
   <title>a11y report</title>
 </head>
 <body>
-  <h1>{{domain}}</h1>
-  <p>This is a test</p>
+  <h1>Accessibility report for {{domain}}</h1>
+  <p>Generated at {{timestamp}}</p>
+
+  <ul>
+    <li>X Critical</li>
+    <li>X Serious</li>
+    <li>X Moderate</li>
+    <li>X Minor</li>
+  </ul>
+
+  {% for page in results %}
+    <h2>{{page.axe_report.url}}</h2>
+  {% endfor %}
 </body>
 </html>
