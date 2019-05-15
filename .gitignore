@@ -1,3 +1,4 @@
 .venv
 dist/
 jinja_test*
+a11y.html

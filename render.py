@@ -17,7 +17,7 @@ def render_report():
   rendered_file = template.render(data)
 
   # write rendered template file
-  with open("ally.html", "w") as write_file:
+  with open("a11y.html", "w") as write_file:
     write_file.write(rendered_file)
 
 render_report()
