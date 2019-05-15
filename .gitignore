@@ -1,0 +1,3 @@
+.venv
+dist/
+jinja_test*
